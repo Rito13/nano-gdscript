@@ -2,6 +2,8 @@
 # Contributors, please read CONTRIBUTING.md
 # otherwise your pull request would be closed
 syntax gdscript "\.gd$"
+formatter gdformat
+linter gdlint
 comment "#"
 
 # Numbers.

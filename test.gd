@@ -27,9 +27,9 @@ func _ready() -> void:
 	test_function("Hello world!")
 
 	var number := TestNode.test_function(
-		'This is a test string.\n \" This will be highlighted as part of the string.'
+		"This is a test string.\n \" \' This will be highlighted as part of the string."
 	)
-	
+
 	match number:
 		TestEnum.CASE_ONE when true:
 			continue
