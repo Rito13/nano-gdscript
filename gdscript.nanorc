@@ -9,9 +9,6 @@ comment "#"
 color orange "\<[0-9]*\>"
 color orange "\<0x[0-9a-fA-F]*\>"
 
-# Function Calls
-color cyan "[_a-zA-Z]*[0-9]*\("
-
 # Operators
 color white "(\!|\%|\&|\*|\(|\)|\-|\+|\=|\{|\}|\[|\]|\/)"
 
@@ -20,6 +17,9 @@ color lightcyan "\<[A-Z]+[_a-zA-Z0-9]*\>"
 ## Class Property
 color white "\.[_a-zA-Z]+[0-9]*"
 
+# Function Calls
+color lightblue "[_a-zA-Z]*[0-9]*\("
+color lightblue "\(|\)"
 # Constants
 color white "\<[A-Z_]+\>"
 
