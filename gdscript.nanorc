@@ -38,8 +38,6 @@ color bold,lightred "\<(true|false)\>"
 color bold,lightred "\<(remote|master|puppet|remotesync|mastersync|puppetsync|sync)\>"
 color bold,lightred "\<(return|pass|static|const|enum|breakpoint|assert|onready)\>"
 color bold,lightred "\<(class_name|extends|var|export|setget|class|func|signal)\>"
-## Builtin Functions.
-color bold,lightred "\<(print|funcref)\>"
 ## Primitive Types.
 color bold,lightgreen "\<(void|bool|int|float)\>"
 
