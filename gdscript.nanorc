@@ -64,14 +64,15 @@ color cyan "\\([abcefnrtv'"\])"
 color green "(\$|%)"[_/a-zA-Z0-9][_/ a-zA-Z0-9]+?""
 color green "(\$|%)[_/a-zA-Z0-9][_/a-zA-Z0-9]+?"
 
+# Comments.
+color lightblack "^#.*"
 # Inline comments.
 color lightblack "\s\s#\s.*"
 
-# Comment lines.
-color lightblack "^#.*"
-
 # Docstrings.
 color white "^##.*"
+# Inline docstrings.
+color white "\s\s##\s.*"
 
 # Misc.
 ## Task Markers.
