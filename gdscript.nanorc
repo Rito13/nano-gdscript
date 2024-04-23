@@ -2,69 +2,68 @@
 # Contributors, please read CONTRIBUTING.md
 # otherwise your pull request would be closed
 syntax gdscript "\.gd$"
-
 comment "#"
 
-# Numbers
+# Numbers.
 color orange "\<[0-9]*\>"
 color orange "\<0x[0-9a-fA-F]*\>"
 
-# Operators
+# Operators.
 color white "(\!|\%|\&|\*|\(|\)|\-|\+|\=|\{|\}|\[|\]|\/)"
 
-# Class
+# Class.
 color lightcyan "\<[A-Z]+[_a-zA-Z0-9]*\>"
-## Class Property
+## Class Property.
 color white "\.[_a-zA-Z]+[0-9]*"
 
-# Function Calls
+# Function Calls.
 color lightblue "[_a-zA-Z]*[0-9]*\("
 color lightblue "\(|\)"
 
-# Constants
+# Constants.
 color white "\<[A-Z_]+\>"
 
-# Keywords
+# Keywords.
 ## Conditions
 color bold,lightred "\<(if|elif|else|match|switch|case|when)\>"
-## Repeations
+## Repeations.
 color bold,lightred "\<(for|while|break|continue)\>"
 ## Long-hand Operator
 color bold,lightred "\<(is|as|not|in|and|or)\>"
-## OOP
+## OOP.
 color bold,lightred "\<(null|self|owner|parent|tool)\>"
-## Booleans
+## Booleans.
 color bold,lightred "\<(true|false)\>"
-## Statements
+## Statements.
 color bold,lightred "\<(remote|master|puppet|remotesync|mastersync|puppetsync|sync)\>"
 color bold,lightred "\<(return|pass|static|const|enum|breakpoint|assert|onready)\>"
 color bold,lightred "\<(class_name|extends|var|export|setget|class|func|signal)\>"
-## Builtin Functions
+## Builtin Functions.
 color bold,lightred "\<(print|funcref)\>"
-## Primitive Types
+## Primitive Types.
 color bold,lightgreen "\<(void|bool|int|float)\>"
 
-# Anotations
+# Anotations.
 color yellow "@[_a-z]*"
 
-# Strings
+# Strings.
 ## "
-color brightyellow "<[^= 	]*>" ""(\\.|[^"])*""
+color brightyellow ""([^"]|\\")*""
 color brightyellow start="\"\"\"" end="\"\"\""
 ## '
-color brightyellow "<[^= 	]*>" "'(\\.|[^'])*'"
+color brightyellow "'([^']|\\')*'"
 
-# Escape sequences
-color cyan "\\([abcefnrtv"\])"
+# Escape sequences.
+color cyan "\\([abcefnrtv'"\])"
 
-# Node path
+# Node paths.
 color green "(\$|%)\"?[_/a-zA-Z0-9]+?\"?"
 
-# Comment line
+# Comment lines.
 color lightblack "^\s*#.*"
 
-# Misc
-## Task Marker
+# Misc.
+## Task Markers.
 color bold,lightcyan "^\s*#\s*(TODO|FIX|HACK|XXX|NOTE|BUG)"
-## Notices
+## Notices.
 color bold,lightyellow "^\s*#\s*(WARNING|WARN|BUGGY)"
