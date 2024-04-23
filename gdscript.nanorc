@@ -25,7 +25,7 @@ color white "\<[A-Z_]+\>"
 
 # Keywords
 ## Conditions
-color bold,lightred "\<(if|elif|else|match|switch|case)\>"
+color bold,lightred "\<(if|elif|else|match|switch|case|when)\>"
 ## Repeations
 color bold,lightred "\<(for|while|break|continue)\>"
 ## Long-hand Operator
