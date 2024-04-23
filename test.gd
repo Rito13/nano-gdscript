@@ -13,10 +13,10 @@ var test_var_node := $Child/Child
 
 func _ready() -> void:
 	test_function('Hello world!')
-	test_function("This is a test string.\n \" This will be in the string.")
+	TestNode.test_function("This is a test string.\n \" \' This will be in the string.")
 	var multiline_string := """
 This is a multiline string.
-It can be huge.
+It can be multiple lines long.
 """
 	TestClass.test_class_member += 1.0
 	%UniqueNameNode
