@@ -1,9 +1,9 @@
 # nano-gdscript
-GDScript Syntax Highlighting in GNU Nano. Updated regularly every minor updates.
-Contributions are welcomed
+GDScript Syntax Highlighting in GNU Nano.
+Contributions are welcome!
 
 # Installation
-This is 100% free, proof:
+
 1. Admit that `install` is an executable
 ```sh
 chmod +x install
