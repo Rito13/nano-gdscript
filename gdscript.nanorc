@@ -18,6 +18,10 @@ color white "\.[_a-zA-Z]+[0-9]*"
 
 # Function Calls.
 color lightblue "[_a-zA-Z]*[0-9]*\("
+
+# Constructors.
+color lightcyan "[A-Z][_a-zA-Z]*[0-9]*\("
+
 color lightblue "\(|\)"
 
 # Constants.
@@ -60,6 +64,9 @@ color green "(\$|%)[_/a-zA-Z0-9][_/a-zA-Z0-9]+?"
 
 # Comment lines.
 color lightblack "^\s*#.*"
+
+# Inline comments.
+color lightblack "\s\s#\s.*"
 
 # Misc.
 ## Task Markers.

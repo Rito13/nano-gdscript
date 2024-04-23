@@ -3,8 +3,11 @@ extends Node
 class_name TestNode
 
 signal test_signaled
-enum TestEnum
-const TEST_CONSTANT
+enum TestEnum {
+	CASE_ONE,
+	CASE_TWO,
+}
+const TEST_CONSTANT := Color()  # Constructor.
 @export var test_export_var := 0
 static var test_static_var: Vector2i
 var test_var_node := $Child/Child
