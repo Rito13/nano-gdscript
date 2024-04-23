@@ -47,9 +47,6 @@ color bold,lightred "\<(void|bool|int|float)\>"
 # Anotations
 color yellow "@[_a-z]*"
 
-# Comment line
-color lightblack "^\s*#.*"
-
 # Strings
 ## "
 color brightyellow "<[^= 	]*>" ""(\\.|[^"])*""
@@ -59,6 +56,9 @@ color brightyellow "<[^= 	]*>" "'(\\.|[^'])*'"
 
 # Child
 color green "\$[\"]?[_a-zA-Z]*[0-9]*[\"]?"
+
+# Comment line
+color lightblack "^\s*#.*"
 
 # Misc
 ## Task Marker
