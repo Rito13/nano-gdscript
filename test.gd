@@ -23,7 +23,7 @@ func _ready() -> void:
 	test_function("Hello world!")
 
 	var number := TestNode.test_function(
-		"This is a test string.\n \" \' This will be in the string."
+		'This is a test string.\n \" This will be highlighted as part of the string.'
 	)
 
 	var format_string := "%i" % 10
@@ -32,6 +32,10 @@ func _ready() -> void:
 	var multiline_string := """
 This is a multiline string.
 It can be multiple lines long.
+
+These should be highlighted: \n \n \\\\
+This shouldn't be highlighted: \
+
 """
 	%UniqueNameNode.text = multiline_string
 
