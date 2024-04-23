@@ -16,7 +16,7 @@ const TEST_CONSTANT := Color()  # Constructor / Inline comment.
 
 @export var test_export_var := 0
 
-var test_var_node := $Child/Child
+var test_var_node := $Child/Child  ## Inline docstring.
 
 @onready var test_onready_var
 
