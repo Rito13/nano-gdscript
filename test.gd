@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export var speed: int = 200
+@export var speed: int = 200
 export var jump_force: int = 0x5f
 
 func _process(delta):
