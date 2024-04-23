@@ -54,6 +54,9 @@ color brightyellow start="\"\"\"" end="\"\"\""
 ## '
 color brightyellow "<[^= 	]*>" "'(\\.|[^'])*'"
 
+# Escape sequences
+color blue "\\[a-z"']"
+
 # Node path
 color green "(\$|%)\"?[_/a-zA-Z0-9]+?\"?"
 
