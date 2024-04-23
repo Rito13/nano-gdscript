@@ -43,6 +43,9 @@ color bold,lightred "\<(print|funcref)\>"
 ## Primitive Types
 color bold,lightred "\<(void|bool|int|float)\>"
 
+## Anotations
+color yellow "@[_a-z]*"
+
 # Comment line
 color lightblack "^\s*#.*"
 
