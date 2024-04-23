@@ -18,5 +18,4 @@ nano test.gd
 ```
 
 # End Notes
-Nano is a great tool overall, its simplicity allows us to improve it.
-This rc file is unlicensed, use it in any way you want
+This rc file is unlicensed, use it in any way you want.
