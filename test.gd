@@ -1,26 +1,25 @@
-extends KinematicBody2D
+@tool
+extends Node
+class_name TestNode
 
-@export var speed: int = 200
-export var jump_force: int = 0x5f
+signal test_signaled
+enum TestEnum
+const TEST_CONSTANT
+@export var test_export_var := 0
+static var test_static_var: Vector2i
+var test_var_node := $Child/Child
+@onready test_onready_var
 
-func _process(delta):
-	var direction = Vector2.ZERO
 
-	# Vertical movement
-	if Input.is_key_pressed(KEY_UP):
-		direction += Vector2.UP
-	elif Input.is_key_pressed(KEY_DOWN):
-		direction += Vector2.DOWN
+func _ready() -> void:
+	test_function('Hello world!')
+	test_function("This is a test string.\n \" This will be in the string.")
+	var multiline_string := """
+This is a multiline string.
+It can be huge.
+"""
+	TestClass.test_class_member += 1.0
+	%UniqueNameNode
 
-	# Horizontal movement	
-	if Input.is_key_pressed(KEY_UP):
-		direction += Vector2.UP
-	elif Input.is_key_pressed(KEY_DOWN):
-		direction += Vector2.DOWN
-
-	# WARNING: Will be processed each frame
-	move_and_slide(Vector2.UP * speed * delta)
-
-func _ready(delta):
-	print("Script is now ready!")
-	$AnimatedSprite.play("default")
+func test_function(msg: String) -> void:
+	print(msg)
