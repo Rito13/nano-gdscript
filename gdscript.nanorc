@@ -50,8 +50,8 @@ color yellow "@[_a-z]*"
 color lightblack "^\s*#.*"
 
 # Strings
-color yellow "\".*\""
-
+color brightyellow "<[^= 	]*>" ""(\\.|[^"])*""
+color brightyellow start="\"\"\"" end="\"\"\""
 # Child
 color green "\$[\"]?[_a-zA-Z]*[0-9]*[\"]?"
 
