@@ -37,7 +37,7 @@ color bold,lightred "\<(is|as|not|in|and|or)\>"
 ## OOP.
 color bold,lightred "\<(null|self|owner|parent|tool)\>"
 ## Booleans.
-color bold,lightred "\<(true|false)\>"
+color red "\<(true|false)\>"
 ## Statements.
 color bold,lightred "\<(remote|master|puppet|remotesync|mastersync|puppetsync|sync)\>"
 color bold,lightred "\<(return|pass|static|const|enum|breakpoint|assert|onready)\>"

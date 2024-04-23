@@ -9,6 +9,7 @@ signal test_signaled
 enum TestEnum {
 	CASE_ONE,
 	CASE_TWO,
+	CASE_THREE,
 }
 
 const TEST_CONSTANT := Color()  # Constructor / Inline comment.
@@ -28,11 +29,18 @@ func _ready() -> void:
 	var number := TestNode.test_function(
 		'This is a test string.\n \" This will be highlighted as part of the string.'
 	)
+	
+	match number:
+		TestEnum.CASE_ONE when true:
+			continue
+		_:
+			return
 
 	var format_string := "%i" % 10
 	TestClass.test_class_member = format_string
 
 	var multiline_string := """
+
 This is a multiline string.
 It can be multiple lines long.
 
@@ -45,4 +53,4 @@ This shouldn't be highlighted: \
 
 func test_function(msg: String) -> int:
 	print(msg)
-	return randi()
+	return randi() % 2
