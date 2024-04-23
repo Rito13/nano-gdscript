@@ -55,7 +55,8 @@ color brightyellow "'([^']|\\')*'"
 color cyan "\\([abcefnrtv'"\])"
 
 # Node paths.
-color green "(\$|%)\"?[_/ a-zA-Z0-9]+?\"?"
+color green "(\$|%)"[_/a-zA-Z0-9][_/ a-zA-Z0-9]+?""
+color green "(\$|%)[_/a-zA-Z0-9][_/a-zA-Z0-9]+?"
 
 # Comment lines.
 color lightblack "^\s*#.*"

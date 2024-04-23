@@ -14,6 +14,7 @@ var test_var_node := $Child/Child
 func _ready() -> void:
 	test_function('Hello world!')
 	TestNode.test_function("This is a test string.\n \" \' This will be in the string.")
+	var format_string := "%i" % 10
 	var multiline_string := """
 This is a multiline string.
 It can be multiple lines long.
