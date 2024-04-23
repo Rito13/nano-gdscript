@@ -1,6 +1,9 @@
 @tool
 class_name TestNode extends Node
 
+## This is a docstring.
+
+# This is a regular comment.
 signal test_signaled
 
 enum TestEnum {
