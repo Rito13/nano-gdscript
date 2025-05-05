@@ -6,34 +6,58 @@ formatter gdformat
 linter gdlint
 comment "#"
 
-# Numbers.
-color orange "\<[0-9]*\>"
-color orange "\<0x[0-9a-fA-F]*\>"
-
 # Operators.
 color white "(\!|\%|\&|\*|\(|\)|\-|\+|\=|\{|\}|\[|\]|\/)"
 
+# Numbers.
+color lightcyan "[+-]?[_0-9]+(\.[_0-9]+)?\>"
+color lightcyan "\<0b[01]+\>"
+color lightcyan "\<0x[0-9a-fA-F]+\>"
+
 # Class.
-color lightcyan "\<[A-Z]+[_a-zA-Z0-9]*\>"
+color lime "\<[A-Z]+[_a-zA-Z0-9]*\>"
 ## Class Property.
-color white "\.[_a-zA-Z]+[0-9]*"
+color lightwhite "\.[_a-zA-Z]+[_a-zA-Z0-9]*"
 
 # Function Calls.
-color lightblue "[_a-zA-Z]*[0-9]*\("
+color sky "[_a-zA-Z]+[_a-zA-Z0-9]*\("
 
 # Constructors.
-color lightcyan "[A-Z][_a-zA-Z]*[0-9]*\("
+color bold,lime "[A-Z][_a-zA-Z0-9]*\("
 
-color lightblue "\(|\)"
+# Global functions.
+## Trigonometric.
+color plum "\<(a?(cos|sin|tan)h?)\("
+## Others alphabetically.
+color plum "\<(abs[fi]?|angle_difference|atan2)\("
+color plum "\<(bezier_(derivative|interpolate)|bytes_to_var(_with_objects)?)\("
+color plum "\<(ceil[fi]?|clamp[fi]?|cubic_interpolate(_angle)?(_in_time)?)\("
+color plum "\<(db_to_linear|deg_to_rad)\("
+color plum "\<(ease|error_string|exp)\("
+color plum "\<(floor[fi]?|f(pos)?mod)\("
+color plum "\<(hash)\("
+color plum "\<(instance_from_id|inverse_lerp|is_((equal|zero)_approx|finite|inf|instance(_id)?_valid|nan|same))\("
+color plum "\<(lerp(_angle|f)?|linear_to_db|log)\("
+color plum "\<(max[fi]?|min[fi]?|move_toward)\("
+color plum "\<(nearest_po2)\("
+color plum "\<(pingpong|posmod|pow|print(_rich|_verbose|err|raw|s|t)?|push_(error|warning))\("
+color plum "\<(rad_to_deg|rand(omize|_from_seed|fn)|rand[fi](_range)?|remap|rid_(allocate_id|from_int64)|rotate_toward|round[fi]?)\("
+color plum "\<(seed|sign[fi]?|smoothstep|snapped[fi]?|sqrt|step_decimals|str|str_to_var)\("
+color plum "\<(type(_convert|_string|of))\("
+color plum "\<(var_to_(bytes(_with_objects)?|str))\("
+color plum "\<(weakref|wrap[fi]?)\("
+
+# Brackets.
+color bold,sky "\(|\)"
 
 # Constants.
-color white "\<[A-Z_]+\>"
+color bold,white "\<[A-Z_]+[_A-Z0-9]*\>"
 
 # Keywords.
 ## Conditions
-color bold,lightred "\<(if|elif|else|match|switch|case|when)\>"
+color bold,lightmagenta "\<(if|elif|else|match|switch|case|when)\>"
 ## Repeations.
-color bold,lightred "\<(for|while|break|continue)\>"
+color bold,lightmagenta "\<(for|while|break|continue)\>"
 ## Long-hand Operator
 color bold,lightred "\<(is|as|not|in|and|or)\>"
 ## OOP.
@@ -42,40 +66,44 @@ color bold,lightred "\<(null|self|owner|parent|tool)\>"
 color red "\<(true|false)\>"
 ## Statements.
 color bold,lightred "\<(remote|master|puppet|remotesync|mastersync|puppetsync|sync)\>"
-color bold,lightred "\<(return|pass|static|const|enum|breakpoint|assert|onready)\>"
+color bold,lightred "\<(static|const|enum|breakpoint|assert|onready)\>"
 color bold,lightred "\<(class_name|extends|var|export|setget|class|func|signal)\>"
+color bold,lightmagenta "\<(return|pass)\>"
 ## Primitive Types.
 color bold,lightgreen "\<(void|bool|int|float)\>"
 
 # Anotations.
-color yellow "@[_a-z]*"
+color orange "@[_a-z]*"
 
 # Strings.
+## prefixes
+color lightyellow "(r|\^|\&)\""
+color brown "r'"
 ## "
-color brightyellow ""([^"]|\\")*""
-color brightyellow start="\"\"\"" end="\"\"\""
+color sand ""([^"]|\\")*""
 ## '
-color brightyellow "'([^']|\\')*'"
+color tawny "'([^']|\\')*'"
 
 # Escape sequences.
-color cyan "\\([abcefnrtv'"\])"
+color italic,gray "\\([abcefnrtv'"\])"
 
 # Node paths.
-color green "(\$|%)"[_/a-zA-Z0-9][_/ a-zA-Z0-9]+?""
+color green "(\$|%)\"[_/a-zA-Z0-9][_/ a-zA-Z0-9]+?\""
 color green "(\$|%)[_/a-zA-Z0-9][_/a-zA-Z0-9]+?"
-
-# Comments.
-color lightblack "^#.*"
-# Inline comments.
-color lightblack "\s\s#\s.*"
-
-# Docstrings.
-color white "^##.*"
-# Inline docstrings.
-color white "\s\s##\s.*"
 
 # Misc.
 ## Task Markers.
 color bold,lightcyan "^\s*#\s*(TODO|FIX|HACK|XXX|NOTE|BUG)"
 ## Notices.
 color bold,lightyellow "^\s*#\s*(WARNING|WARN|BUGGY)"
+
+
+# Comments.
+color lightblack "#.*$"
+
+# Docstrings.
+color lightblue "##.*$"
+
+# Multi line strings.
+color sand start="\"\"\"" end="\"\"\""
+color tawny start="'''" end="'''"
