@@ -75,6 +75,10 @@ color bold,lightgreen "\<(void|bool|int|float)\>"
 # Anotations.
 color orange "@[_a-z]*"
 
+# Node paths.
+color green "(\$|%)\"[_/a-zA-Z0-9][_/ a-zA-Z0-9]+?\""
+color green "(\$|%)[_/a-zA-Z0-9][_/a-zA-Z0-9]+?"
+
 # Strings.
 ## prefixes
 color lightyellow "(r|\^|\&)\""
@@ -85,24 +89,20 @@ color sand ""([^"]|\\")*""
 color tawny "'([^']|\\')*'"
 
 # Escape sequences.
-color italic,gray "\\([abcefnrtv'"\])"
-
-# Node paths.
-color green "(\$|%)\"[_/a-zA-Z0-9][_/ a-zA-Z0-9]+?\""
-color green "(\$|%)[_/a-zA-Z0-9][_/a-zA-Z0-9]+?"
-
-# Misc.
-## Task Markers.
-color bold,lightcyan "^\s*#\s*(TODO|FIX|HACK|XXX|NOTE|BUG)"
-## Notices.
-color bold,lightyellow "^\s*#\s*(WARNING|WARN|BUGGY)"
-
+color italic,gray "\\([abcefnrtv'\"\])"
+color green "%[+-]?([0-9]+|\*)?(\.([0-9]+|\*))?[scdoxXfv]"
 
 # Comments.
 color lightblack "#.*$"
 
 # Docstrings.
 color lightblue "##.*$"
+
+# Misc.
+## Task Markers.
+color bold,lightcyan "\<(TODO|FIX|HACK|XXX|NOTE|BUG)\>"
+## Notices.
+color bold,lightyellow "\<(WARNING|WARN|BUGGY)\>"
 
 # Multi line strings.
 color sand start="\"\"\"" end="\"\"\""
