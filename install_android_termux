@@ -1,0 +1,5 @@
+#! /usr/bin/env sh
+echo "What we need:"
+echo " 1. Copy gdscript.nanorc to ~/../usr/share/nano directory"
+cp gdscript.nanorc ~/../usr/share/nano
+echo "Done"
