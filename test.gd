@@ -75,4 +75,7 @@ func new_function(haha:=1.23) -> StringName:
 
 func test_function(msg: String) -> int:
         print(msg)
-        return randi() % 2
+        var out = randi()
+        out += 13*2-16/4
+        out = out % 2
+        return out 
