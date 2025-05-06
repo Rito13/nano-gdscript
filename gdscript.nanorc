@@ -7,7 +7,7 @@ linter gdlint
 comment "#"
 
 # Operators.
-color white "(\!|\%|\&|\*|\(|\)|\-|\+|\=|\{|\}|\[|\]|\/)"
+# color white "(\!|\%|\&|\*|\(|\)|\-|\+|\=|\{|\}|\[|\]|\/)"
 
 # Numbers.
 color lightcyan "\<[+-]?[_0-9]+(\.[_0-9]+)?\>"
@@ -51,7 +51,7 @@ color plum "\<(weakref|wrap[fi]?)\("
 color bold,sky "\(|\)"
 
 # Constants.
-color bold,white "\<[A-Z_]+[_A-Z0-9]*\>"
+color bold,normal "\<[A-Z_]+[_A-Z0-9]*\>"
 
 # Keywords.
 ## Conditions
