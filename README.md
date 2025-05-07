@@ -7,11 +7,10 @@ Contributions are welcome!
 ```sh
 chmod +x install
 ```
-2. Start the installation
+2. Start the installation. On android use `-a` option. 
 ```sh
 ./install
 ```
-On android use `-a` option
 3. Test it
 ```sh
 nano test.gd
