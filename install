@@ -1,6 +1,85 @@
-#! /usr/bin/env sh
-echo "Installing requires sudo permission"
-echo "What we need:"
-echo " 1. Copy gdscript.nanorc to /usr/share/nano directory"
-sudo cp gdscript.nanorc /usr/share/nano
-echo "Done"
+##! /usr/bin/env sh
+rc_file="gdscript.nanorc"
+
+Install() { # (nano_path,sudo_cmd)
+	echo "Installing requires $2permission"
+	echo "What we need:"
+	echo " 1. Copy $rc_file to $1 directory"
+	$2cp -f "$rc_file" "$1"
+	echo "Done"
+}
+
+Help() {
+	echo this is help message
+}
+
+Replace() { # (file_name,from,to)
+	while IFS='' read -r a; do
+		echo "${a//$2/$3}"
+	done < $1 > $1.t
+	echo "#replaced $2 with $3" >> $1.t
+	mv -f $1.t $1
+}
+
+instalation_path=/usr/share/nano
+sudo_cmd="sudo "
+
+while getopts ":ha" option; do
+	case $option in
+		h) # display Help
+			Help
+			exit;;
+		a) # android termux
+			instalation_path=~/../usr/share/nano
+			sudo_cmd=""
+			;;
+		\?) # Invalid option
+			echo "Error: Invalid option"
+			echo "try -h option for help"
+			exit;;
+	esac
+done
+
+ReplaceComplex() { # (file)
+	Replace $1 sand lightyellow
+	Replace $1 lime lightgreen
+	Replace $1 sky lightblue
+	Replace $1 plum magenta
+	Replace $1 orange yellow
+	Replace $1 brown lightyellow
+	Replace $1 tawny lightyellow
+	Replace $1 crimson red
+	Replace $1 brick red
+	Replace $1 slate gray
+}
+
+Invert() { # (file,color1,color2)
+	Replace $1 $2 "$2tmpname"
+	Replace $1 $3 $2
+	Replace $1 "$2tmpname" $3
+}
+
+cp $rc_file $rc_file.back
+echo "Choose theme:"
+echo "1.Default - for 256+ colors terminals"
+echo "2.Simpler - using only 16 default colors"
+echo "3.Light - for terminals with white background"
+echo "4.Simple Light - combination of 2nd and 3rd"
+read -p "your choice(number):" theme
+case $theme in
+	1) 	Install "$instalation_path" "$sudo_cmd"
+		;;
+	2) 	ReplaceComplex $rc_file
+		Install "$instalation_path" "$sudo_cmd"
+		;;
+	3)	Invert $rc_file white black
+		Install "$instalation_path" "$sudo_cmd"
+		;;
+	4)	ReplaceComplex $rc_file
+		Invert $rc_file white black
+		Install "$instalation_path" "$sudo_cmd"
+		;;
+	\?) echo "invalid theme"
+		;;
+esac
+mv -f $rc_file.back $rc_file
