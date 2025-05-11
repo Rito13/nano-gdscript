@@ -67,6 +67,8 @@ color bold,lightred "\<(is|as|not|in|and|or)\>"
 color bold,lightred "\<(null|self|owner|parent|tool)\>"
 ## Booleans.
 color red "\<(true|false)\>"
+## Built-in GDScript constants
+color red "\<(PI|TAU|INF|NAN)\>"
 ## Statements.
 color bold,lightred "\<(remote|master|puppet|remotesync|mastersync|puppetsync|sync)\>"
 color bold,lightred "\<(static|const|enum|breakpoint|assert|onready)\>"
