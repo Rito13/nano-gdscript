@@ -28,6 +28,9 @@ color bold,lime "[A-Z][_a-zA-Z0-9]*\("
 # Global functions.
 ## Trigonometric.
 color plum "\<(a?(cos|sin|tan)h?)\("
+## GDScript specific
+color plum "\<(assert|char|convert|dict_to_inst|get_stack|inst_to_dict|is_instance_of)\("
+color plum "\<(len|load|preload|print_debug|print_stack|range|type_exists)\("
 ## Others alphabetically.
 color plum "\<(abs[fi]?|angle_difference|atan2)\("
 color plum "\<(bezier_(derivative|interpolate)|bytes_to_var(_with_objects)?)\("

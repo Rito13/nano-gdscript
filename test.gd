@@ -39,6 +39,9 @@ func _ready() -> void:
                 "This is a test string.\n \" \' This will be highlighted as part of the string."
         )
 
+        for i in range(len([1,2,3,4,5,6,7])):
+                print_debug(i)
+
         match number:
                 TestEnum.CASE_ONE when true:
                         continue
@@ -70,8 +73,12 @@ not highlighted: \ \d \g
 # and with tab 		
 
 func new_function(haha:=1.23) -> StringName:
-    var string_name := &"Named_Node"
-    return string_name
+        if haha == PI:
+                return &"PI"
+        elif haha == TAU:
+                return &"TAU"
+        var string_name := &"Named_Node"
+        return string_name
 
 func test_function(msg: String) -> int:
         print(msg)
